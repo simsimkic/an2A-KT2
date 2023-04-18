@@ -1,0 +1,46 @@
+﻿<Window x:Class="SOSTeam.TravelAgency.WPF.Views.TourGuide.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SOSTeam.TravelAgency.WPF.Views.TourGuide"
+        mc:Ignorable="d"
+        Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="Tour Agency" Height="750" Width="430">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="57"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="57"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#001E28">
+            <Button Width="50" Background="Transparent" BorderBrush="Transparent">
+                <Image Source="/Resources/Icons/burger_menu.png"></Image>
+            </Button>
+            <Label Foreground="White" Content="Home" FontSize="20" Width="336" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+        </StackPanel>
+
+        <!-- BOTTOM MENU -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Name="BackButton" Width="86" Background="Transparent" BorderBrush="Transparent">
+                <Image Source="/Resources/Icons/back_button.png"></Image>
+            </Button>
+            <Button Name="CreateButton" Width="86" Background="Transparent" BorderBrush="Transparent" Command="{Binding ShowCreateTourFormCommand}">
+                <Image Source="/Resources/Icons/plus.png"></Image>
+            </Button>
+            <Button Name="HomeButton" Width="86" Background="Transparent" BorderBrush="Transparent" Command="{Binding ShowHomePageCommand}">
+                <Image Source="/Resources/Icons/home.png"></Image>
+            </Button>
+            <Button Name="LiveTourButton" Width="86" Background="Transparent" BorderBrush="Transparent" Command="{Binding ShowLiveTourCommand}">
+                <Image Source="/Resources/Icons/livetour.png"></Image>
+            </Button>
+            <Button Name="DemoButton" Width="86" Background="Transparent" BorderBrush="Transparent">
+                <Image Source="/Resources/Icons/demo.png"></Image>
+            </Button>
+        </StackPanel>
+        <Frame x:Name="ToursOverviewFrame" Grid.Row="1"></Frame>
+    </Grid>
+</Window>
